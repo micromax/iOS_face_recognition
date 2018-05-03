@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Moya (10.0.1):
+    - Moya/Core (= 10.0.1)
+  - Moya/Core (10.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - PMAlertController (3.0.0)
+  - Result (3.2.4)
+  - "UIView+Shake (1.4.0)"
+
+DEPENDENCIES:
+  - Alamofire
+  - Moya
+  - PMAlertController
+  - "UIView+Shake"
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Moya
+    - PMAlertController
+    - Result
+    - "UIView+Shake"
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  PMAlertController: 90c809d1dbf38293cfa1817da6d023314bc24075
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  "UIView+Shake": 055ad67721de1f74d29c0a1d464697e505dfc62f
+
+PODFILE CHECKSUM: e936e6e87bcbe6537ca3abff7db4a6ffa0c2be13
+
+COCOAPODS: 1.5.0

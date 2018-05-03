@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89418E99209B816B00A2B56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89418E98209B816B00A2B56C /* AppDelegate.swift */; };
+		89418E9B209B816B00A2B56C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89418E9A209B816B00A2B56C /* EntryViewController.swift */; };
+		89418EA0209B816C00A2B56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89418E9F209B816C00A2B56C /* Assets.xcassets */; };
+		89418EA3209B816C00A2B56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89418EA1209B816C00A2B56C /* LaunchScreen.storyboard */; };
+		89E1826F209B843600A8D838 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1826E209B843600A8D838 /* CommonViewController.swift */; };
+		89E18271209B847700A8D838 /* ProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18270209B847700A8D838 /* ProgressLoader.swift */; };
+		89E18273209B84B600A8D838 /* UIExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18272209B84B600A8D838 /* UIExtenstions.swift */; };
+		89E18275209B851A00A8D838 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18274209B851A00A8D838 /* UnderlinedTextField.swift */; };
+		89E18277209B856100A8D838 /* CustomizedAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18276209B856100A8D838 /* CustomizedAlertController.swift */; };
+		89E18279209B85AD00A8D838 /* ColorExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18278209B85AD00A8D838 /* ColorExtenstions.swift */; };
+		A75AB3C54643799E9BF874EF /* Pods_ios_client_face_recognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876C2A3E57B9BEB93D18CE94 /* Pods_ios_client_face_recognition.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22A03DFCFC4818AAABDD15EF /* Pods-ios_client_face_recognition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_client_face_recognition.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_client_face_recognition/Pods-ios_client_face_recognition.release.xcconfig"; sourceTree = "<group>"; };
+		3EA3C44CE9FF8B7188CA5731 /* Pods-ios_client_face_recognition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_client_face_recognition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios_client_face_recognition/Pods-ios_client_face_recognition.debug.xcconfig"; sourceTree = "<group>"; };
+		876C2A3E57B9BEB93D18CE94 /* Pods_ios_client_face_recognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_client_face_recognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89418E95209B816B00A2B56C /* ios_client_face_recognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_client_face_recognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89418E98209B816B00A2B56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89418E9A209B816B00A2B56C /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		89418E9F209B816C00A2B56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89418EA2209B816C00A2B56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89418EA4209B816C00A2B56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E1826E209B843600A8D838 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		89E18270209B847700A8D838 /* ProgressLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLoader.swift; sourceTree = "<group>"; };
+		89E18272209B84B600A8D838 /* UIExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtenstions.swift; sourceTree = "<group>"; };
+		89E18274209B851A00A8D838 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
+		89E18276209B856100A8D838 /* CustomizedAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedAlertController.swift; sourceTree = "<group>"; };
+		89E18278209B85AD00A8D838 /* ColorExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtenstions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89418E92209B816B00A2B56C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A75AB3C54643799E9BF874EF /* Pods_ios_client_face_recognition.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E6A3CD5C2D5C6FD09EBFBC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EA3C44CE9FF8B7188CA5731 /* Pods-ios_client_face_recognition.debug.xcconfig */,
+				22A03DFCFC4818AAABDD15EF /* Pods-ios_client_face_recognition.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		82B9F40225246929232D709E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				876C2A3E57B9BEB93D18CE94 /* Pods_ios_client_face_recognition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89418E8C209B816B00A2B56C = {
+			isa = PBXGroup;
+			children = (
+				89418E97209B816B00A2B56C /* ios_client_face_recognition */,
+				89418E96209B816B00A2B56C /* Products */,
+				1E6A3CD5C2D5C6FD09EBFBC9 /* Pods */,
+				82B9F40225246929232D709E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		89418E96209B816B00A2B56C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89418E95209B816B00A2B56C /* ios_client_face_recognition.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89418E97209B816B00A2B56C /* ios_client_face_recognition */ = {
+			isa = PBXGroup;
+			children = (
+				89E1826D209B841A00A8D838 /* Utility */,
+				89418E98209B816B00A2B56C /* AppDelegate.swift */,
+				89418E9A209B816B00A2B56C /* EntryViewController.swift */,
+				89418E9F209B816C00A2B56C /* Assets.xcassets */,
+				89418EA1209B816C00A2B56C /* LaunchScreen.storyboard */,
+				89418EA4209B816C00A2B56C /* Info.plist */,
+			);
+			path = ios_client_face_recognition;
+			sourceTree = "<group>";
+		};
+		89E1826D209B841A00A8D838 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				89E1826E209B843600A8D838 /* CommonViewController.swift */,
+				89E18270209B847700A8D838 /* ProgressLoader.swift */,
+				89E18272209B84B600A8D838 /* UIExtenstions.swift */,
+				89E18274209B851A00A8D838 /* UnderlinedTextField.swift */,
+				89E18276209B856100A8D838 /* CustomizedAlertController.swift */,
+				89E18278209B85AD00A8D838 /* ColorExtenstions.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89418E94209B816B00A2B56C /* ios_client_face_recognition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89418EA7209B816C00A2B56C /* Build configuration list for PBXNativeTarget "ios_client_face_recognition" */;
+			buildPhases = (
+				9BB7F623A39AEE0381AC9309 /* [CP] Check Pods Manifest.lock */,
+				89418E91209B816B00A2B56C /* Sources */,
+				89418E92209B816B00A2B56C /* Frameworks */,
+				89418E93209B816B00A2B56C /* Resources */,
+				A231A0527C0EF487898EAB51 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios_client_face_recognition;
+			productName = ios_client_face_recognition;
+			productReference = 89418E95209B816B00A2B56C /* ios_client_face_recognition.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89418E8D209B816B00A2B56C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Chloe;
+				TargetAttributes = {
+					89418E94209B816B00A2B56C = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 89418E90209B816B00A2B56C /* Build configuration list for PBXProject "ios_client_face_recognition" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89418E8C209B816B00A2B56C;
+			productRefGroup = 89418E96209B816B00A2B56C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89418E94209B816B00A2B56C /* ios_client_face_recognition */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89418E93209B816B00A2B56C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89418EA3209B816C00A2B56C /* LaunchScreen.storyboard in Resources */,
+				89418EA0209B816C00A2B56C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9BB7F623A39AEE0381AC9309 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios_client_face_recognition-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A231A0527C0EF487898EAB51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ios_client_face_recognition/Pods-ios_client_face_recognition-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PMAlertController/PMAlertController.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/UIView+Shake/UIView_Shake.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMAlertController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIView_Shake.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios_client_face_recognition/Pods-ios_client_face_recognition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89418E91209B816B00A2B56C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E1826F209B843600A8D838 /* CommonViewController.swift in Sources */,
+				89E18277209B856100A8D838 /* CustomizedAlertController.swift in Sources */,
+				89E18275209B851A00A8D838 /* UnderlinedTextField.swift in Sources */,
+				89418E9B209B816B00A2B56C /* EntryViewController.swift in Sources */,
+				89E18279209B85AD00A8D838 /* ColorExtenstions.swift in Sources */,
+				89418E99209B816B00A2B56C /* AppDelegate.swift in Sources */,
+				89E18271209B847700A8D838 /* ProgressLoader.swift in Sources */,
+				89E18273209B84B600A8D838 /* UIExtenstions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		89418EA1209B816C00A2B56C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89418EA2209B816C00A2B56C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89418EA5209B816C00A2B56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		89418EA6209B816C00A2B56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89418EA8209B816C00A2B56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EA3C44CE9FF8B7188CA5731 /* Pods-ios_client_face_recognition.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ios_client_face_recognition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sunstory.ios-client-face-recognition";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89418EA9209B816C00A2B56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22A03DFCFC4818AAABDD15EF /* Pods-ios_client_face_recognition.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ios_client_face_recognition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sunstory.ios-client-face-recognition";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89418E90209B816B00A2B56C /* Build configuration list for PBXProject "ios_client_face_recognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89418EA5209B816C00A2B56C /* Debug */,
+				89418EA6209B816C00A2B56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89418EA7209B816C00A2B56C /* Build configuration list for PBXNativeTarget "ios_client_face_recognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89418EA8209B816C00A2B56C /* Debug */,
+				89418EA9209B816C00A2B56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89418E8D209B816B00A2B56C /* Project object */;
+}
