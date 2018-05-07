@@ -2,14 +2,19 @@ import UIKit
 import Alamofire
 
 extension UITextField {
-    func defaultInitilization(hint: String) {
+    func defaultInitilization(hint: String, color: UIColor = UIColor.black) {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.textColor = UIColor.white
+        self.textColor = color
         let placeholder = NSAttributedString(string: hint,
-                                             attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+                                             attributes: [NSAttributedStringKey.foregroundColor : color])
         
         self.attributedPlaceholder = placeholder
         self.textAlignment = .center
+    }
+    
+    
+    func scaleFont(scale: CGFloat = 0.035, view: UIView) {
+        font = font?.withSize(scale * view.frame.height)
     }
 }
 
@@ -22,15 +27,18 @@ extension UIFont{
 
 
 extension UIButton {
-    func filledCornerInitilization(color: UIColor, title: String, cornerRadius: CGFloat = 20) {
-        backgroundColor = color
-        setTitle(title, for: .normal)
-        setTitleColor(UIColor.white, for: .normal)
-        layer.borderColor = color.cgColor
-        layer.cornerRadius = cornerRadius
-        layer.borderWidth = 1
+    func defaultInit(title: String, color: UIColor = UIColor.white) {
+        backgroundColor = UIColor(red: 96, green: 134, blue: 196)
+        setTitle(title, for: . normal)
+        setTitleColor(color, for: .normal)
+        titleLabel?.adjustsFontSizeToFitWidth = true
         
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+    func scaleFont(scale: CGFloat = 0.035, view: UIView) {
+        titleLabel?.font = titleLabel?.font.withSize(scale * view.frame.height)
     }
 }
 

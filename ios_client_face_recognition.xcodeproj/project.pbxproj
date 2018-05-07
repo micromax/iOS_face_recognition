@@ -11,6 +11,10 @@
 		89418E9B209B816B00A2B56C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89418E9A209B816B00A2B56C /* EntryViewController.swift */; };
 		89418EA0209B816C00A2B56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89418E9F209B816C00A2B56C /* Assets.xcassets */; };
 		89418EA3209B816C00A2B56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89418EA1209B816C00A2B56C /* LaunchScreen.storyboard */; };
+		8971DF3720A0BD9F009A87CA /* EntryViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8971DF3620A0BD9F009A87CA /* EntryViewPresenter.swift */; };
+		8991EE7320A0CF4200E3EBB9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991EE7220A0CF4200E3EBB9 /* RegisterViewController.swift */; };
+		8991EE7520A0D07800E3EBB9 /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */; };
+		8991EE7720A0D53200E3EBB9 /* FaceRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991EE7620A0D53200E3EBB9 /* FaceRecognitionService.swift */; };
 		89E1826F209B843600A8D838 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1826E209B843600A8D838 /* CommonViewController.swift */; };
 		89E18271209B847700A8D838 /* ProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18270209B847700A8D838 /* ProgressLoader.swift */; };
 		89E18273209B84B600A8D838 /* UIExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18272209B84B600A8D838 /* UIExtenstions.swift */; };
@@ -30,6 +34,10 @@
 		89418E9F209B816C00A2B56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89418EA2209B816C00A2B56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89418EA4209B816C00A2B56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8971DF3620A0BD9F009A87CA /* EntryViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewPresenter.swift; sourceTree = "<group>"; };
+		8991EE7220A0CF4200E3EBB9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
+		8991EE7620A0D53200E3EBB9 /* FaceRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognitionService.swift; sourceTree = "<group>"; };
 		89E1826E209B843600A8D838 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		89E18270209B847700A8D838 /* ProgressLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLoader.swift; sourceTree = "<group>"; };
 		89E18272209B84B600A8D838 /* UIExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtenstions.swift; sourceTree = "<group>"; };
@@ -88,14 +96,34 @@
 		89418E97209B816B00A2B56C /* ios_client_face_recognition */ = {
 			isa = PBXGroup;
 			children = (
+				8991EE6F20A0CF0E00E3EBB9 /* Network */,
+				8971DF3520A0BD80009A87CA /* Entry */,
 				89E1826D209B841A00A8D838 /* Utility */,
 				89418E98209B816B00A2B56C /* AppDelegate.swift */,
-				89418E9A209B816B00A2B56C /* EntryViewController.swift */,
 				89418E9F209B816C00A2B56C /* Assets.xcassets */,
 				89418EA1209B816C00A2B56C /* LaunchScreen.storyboard */,
 				89418EA4209B816C00A2B56C /* Info.plist */,
 			);
 			path = ios_client_face_recognition;
+			sourceTree = "<group>";
+		};
+		8971DF3520A0BD80009A87CA /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				89418E9A209B816B00A2B56C /* EntryViewController.swift */,
+				8971DF3620A0BD9F009A87CA /* EntryViewPresenter.swift */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		8991EE6F20A0CF0E00E3EBB9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8991EE7220A0CF4200E3EBB9 /* RegisterViewController.swift */,
+				8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */,
+				8991EE7620A0D53200E3EBB9 /* FaceRecognitionService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		89E1826D209B841A00A8D838 /* Utility */ = {
@@ -231,12 +259,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E1826F209B843600A8D838 /* CommonViewController.swift in Sources */,
+				8991EE7320A0CF4200E3EBB9 /* RegisterViewController.swift in Sources */,
+				8991EE7520A0D07800E3EBB9 /* RegisterViewPresenter.swift in Sources */,
 				89E18277209B856100A8D838 /* CustomizedAlertController.swift in Sources */,
+				8991EE7720A0D53200E3EBB9 /* FaceRecognitionService.swift in Sources */,
 				89E18275209B851A00A8D838 /* UnderlinedTextField.swift in Sources */,
 				89418E9B209B816B00A2B56C /* EntryViewController.swift in Sources */,
 				89E18279209B85AD00A8D838 /* ColorExtenstions.swift in Sources */,
 				89418E99209B816B00A2B56C /* AppDelegate.swift in Sources */,
 				89E18271209B847700A8D838 /* ProgressLoader.swift in Sources */,
+				8971DF3720A0BD9F009A87CA /* EntryViewPresenter.swift in Sources */,
 				89E18273209B84B600A8D838 /* UIExtenstions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +409,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ios_client_face_recognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sunstory.ios-client-face-recognition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -393,7 +428,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ios_client_face_recognition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sunstory.ios-client-face-recognition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

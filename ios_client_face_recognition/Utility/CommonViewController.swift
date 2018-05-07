@@ -26,16 +26,17 @@ extension NavigationBar where Self: UIViewController {
     fileprivate func navigationBar(title: String) {
         navigationItem.title = title
         navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: UIColor.white,
+            [NSAttributedStringKey.foregroundColor: UIColor.black,
              NSAttributedStringKey.font: UIFont.systemFont(ofSize: 28).withSize(0.037 * view.frame.height)]
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = UIColor.black
         
         self.navigationController?.navigationBar.topItem?.backBarButtonItem =
             UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         setNeedsStatusBarAppearanceUpdate()
     }
 }
@@ -155,13 +156,18 @@ class CommonViewController: UIViewController, NavigationBar {
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
     
     //do not forget to change color of view otherwise it'll be transparent
-    final func color(_ color: UIColor) {
+    final func bgColor(_ color: UIColor) {
         view.backgroundColor = color
+    }
+    
+    
+    final func bgImage(_ image: UIImage) {
+        bgColor(UIColor(patternImage: image))
     }
 }
 

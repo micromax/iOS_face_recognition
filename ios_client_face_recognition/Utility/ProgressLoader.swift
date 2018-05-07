@@ -76,7 +76,7 @@ extension UIView {
         indicatorConrainer.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(indicatorConrainer)
         
-        let image = UIImage(named: "hearts")
+        let image = #imageLiteral(resourceName: "face_embbedings")
         let heartsImageView = UIImageView(image: image)
         heartsImageView.translatesAutoresizingMaskIntoConstraints = false
         heartsImageView.contentMode = .scaleAspectFill
