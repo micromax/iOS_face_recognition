@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 
 extension UITextField {
-    func defaultInitilization(hint: String, color: UIColor = UIColor.black) {
+    func defaultInitilization(hint: String, color: UIColor = UIColor.black, bgColor: UIColor? = nil) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.textColor = color
         let placeholder = NSAttributedString(string: hint,
@@ -10,6 +10,7 @@ extension UITextField {
         
         self.attributedPlaceholder = placeholder
         self.textAlignment = .center
+        self.backgroundColor = UIColor(red: 240, green: 248, blue: 255)
     }
     
     

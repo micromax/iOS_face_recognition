@@ -96,8 +96,8 @@
 		89418E97209B816B00A2B56C /* ios_client_face_recognition */ = {
 			isa = PBXGroup;
 			children = (
+				8991EE7920A0E19900E3EBB9 /* Views */,
 				8991EE6F20A0CF0E00E3EBB9 /* Network */,
-				8971DF3520A0BD80009A87CA /* Entry */,
 				89E1826D209B841A00A8D838 /* Utility */,
 				89418E98209B816B00A2B56C /* AppDelegate.swift */,
 				89418E9F209B816C00A2B56C /* Assets.xcassets */,
@@ -119,11 +119,27 @@
 		8991EE6F20A0CF0E00E3EBB9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8991EE7220A0CF4200E3EBB9 /* RegisterViewController.swift */,
-				8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */,
 				8991EE7620A0D53200E3EBB9 /* FaceRecognitionService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8991EE7820A0E18600E3EBB9 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8991EE7220A0CF4200E3EBB9 /* RegisterViewController.swift */,
+				8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		8991EE7920A0E19900E3EBB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8991EE7820A0E18600E3EBB9 /* Register */,
+				8971DF3520A0BD80009A87CA /* Entry */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		89E1826D209B841A00A8D838 /* Utility */ = {
