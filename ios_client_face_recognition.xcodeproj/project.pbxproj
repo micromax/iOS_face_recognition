@@ -21,6 +21,11 @@
 		89E18275209B851A00A8D838 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18274209B851A00A8D838 /* UnderlinedTextField.swift */; };
 		89E18277209B856100A8D838 /* CustomizedAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18276209B856100A8D838 /* CustomizedAlertController.swift */; };
 		89E18279209B85AD00A8D838 /* ColorExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18278209B85AD00A8D838 /* ColorExtenstions.swift */; };
+		89ED656120A1F66000113911 /* UINeuralNetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED656020A1F66000113911 /* UINeuralNetworkUtil.swift */; };
+		89ED656420A1F7F600113911 /* FaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED656320A1F7F600113911 /* FaceType.swift */; };
+		89ED656820A21A7C00113911 /* ImageActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED656720A21A7C00113911 /* ImageActionViewController.swift */; };
+		89ED656A20A21BDF00113911 /* ImageActionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED656920A21BDF00113911 /* ImageActionPresenter.swift */; };
+		89EDE0B120A1F16B0056AB36 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDE0B020A1F16B0056AB36 /* NetworkRequests.swift */; };
 		A75AB3C54643799E9BF874EF /* Pods_ios_client_face_recognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876C2A3E57B9BEB93D18CE94 /* Pods_ios_client_face_recognition.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +49,11 @@
 		89E18274209B851A00A8D838 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		89E18276209B856100A8D838 /* CustomizedAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedAlertController.swift; sourceTree = "<group>"; };
 		89E18278209B85AD00A8D838 /* ColorExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtenstions.swift; sourceTree = "<group>"; };
+		89ED656020A1F66000113911 /* UINeuralNetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINeuralNetworkUtil.swift; sourceTree = "<group>"; };
+		89ED656320A1F7F600113911 /* FaceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceType.swift; sourceTree = "<group>"; };
+		89ED656720A21A7C00113911 /* ImageActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActionViewController.swift; sourceTree = "<group>"; };
+		89ED656920A21BDF00113911 /* ImageActionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActionPresenter.swift; sourceTree = "<group>"; };
+		89EDE0B020A1F16B0056AB36 /* NetworkRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +146,11 @@
 		8991EE7920A0E19900E3EBB9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				89ED656620A21A4100113911 /* ImageFunctionality */,
+				89ED656220A1F7ED00113911 /* Model */,
 				8991EE7820A0E18600E3EBB9 /* Register */,
 				8971DF3520A0BD80009A87CA /* Entry */,
+				89EDE0B020A1F16B0056AB36 /* NetworkRequests.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,8 +164,26 @@
 				89E18274209B851A00A8D838 /* UnderlinedTextField.swift */,
 				89E18276209B856100A8D838 /* CustomizedAlertController.swift */,
 				89E18278209B85AD00A8D838 /* ColorExtenstions.swift */,
+				89ED656020A1F66000113911 /* UINeuralNetworkUtil.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		89ED656220A1F7ED00113911 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89ED656320A1F7F600113911 /* FaceType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		89ED656620A21A4100113911 /* ImageFunctionality */ = {
+			isa = PBXGroup;
+			children = (
+				89ED656720A21A7C00113911 /* ImageActionViewController.swift */,
+				89ED656920A21BDF00113911 /* ImageActionPresenter.swift */,
+			);
+			path = ImageFunctionality;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E1826F209B843600A8D838 /* CommonViewController.swift in Sources */,
+				89ED656A20A21BDF00113911 /* ImageActionPresenter.swift in Sources */,
 				8991EE7320A0CF4200E3EBB9 /* RegisterViewController.swift in Sources */,
+				89EDE0B120A1F16B0056AB36 /* NetworkRequests.swift in Sources */,
 				8991EE7520A0D07800E3EBB9 /* RegisterViewPresenter.swift in Sources */,
 				89E18277209B856100A8D838 /* CustomizedAlertController.swift in Sources */,
 				8991EE7720A0D53200E3EBB9 /* FaceRecognitionService.swift in Sources */,
@@ -283,9 +316,12 @@
 				89418E9B209B816B00A2B56C /* EntryViewController.swift in Sources */,
 				89E18279209B85AD00A8D838 /* ColorExtenstions.swift in Sources */,
 				89418E99209B816B00A2B56C /* AppDelegate.swift in Sources */,
+				89ED656820A21A7C00113911 /* ImageActionViewController.swift in Sources */,
+				89ED656420A1F7F600113911 /* FaceType.swift in Sources */,
 				89E18271209B847700A8D838 /* ProgressLoader.swift in Sources */,
 				8971DF3720A0BD9F009A87CA /* EntryViewPresenter.swift in Sources */,
 				89E18273209B84B600A8D838 /* UIExtenstions.swift in Sources */,
+				89ED656120A1F66000113911 /* UINeuralNetworkUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

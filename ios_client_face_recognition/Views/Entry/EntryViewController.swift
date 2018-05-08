@@ -95,41 +95,17 @@ class EntryViewController: CommonViewController {
     }
     
     
-    func alert(title: String, description: String) {
-        let alert = customizedAlertController(title: title, description: description)
-        let ok = customizedAlertAction(title: "OK");
+    func onLogin(username: String, token: String) {
+        let imageActionVC = ImageActionViewController()
+        imageActionVC.username = username
+        imageActionVC.token = token
         
-        alert.addAction(ok);
-        present(alert, animated: true)
-    }
-    
-    
-    func alertWithFace(_ face: UIImage) {
-        let alert = customizedAlertController(title: "Found face", description: "Is this your face?", image: face)
-        
-        let yes = customizedAlertAction(title: "Yes" , action: {
-            self.presenter.loginPhoto(photo: face)
-        });
-        let no = customizedAlertAction(title: "No")
-        
-        alert.addAction(yes)
-        alert.addAction(no)
-        
-        present(alert, animated: true)
+        navigationController?.pushViewController(imageActionVC, animated: true)
     }
     
     
     @objc private func loginPhoto() {
-        pickImageActionSheet(action: chooseImageWith)
-    }
-    
-    
-    private func chooseImageWith(source: UIImagePickerControllerSourceType) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = source
-        imagePicker.delegate = self
-        
-        present(imagePicker, animated: true)
+        pickImageActionSheet(delegate: self)
     }
     
     
@@ -186,7 +162,7 @@ extension EntryViewController: UIImagePickerControllerDelegate, UINavigationCont
         }
         
         dismiss(animated: true, completion: {
-            self.presenter.cropFace(photo: image)
+            self.presenter.loginPhotoAfterFaceCheck(photo: image)
         });
     }
 }

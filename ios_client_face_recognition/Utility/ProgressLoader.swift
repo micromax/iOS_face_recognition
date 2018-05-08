@@ -60,6 +60,7 @@ extension UIView {
         bringSubview(toFront: container)
     }
     
+    
     func showLoaderFullScreen() {
         loaderView?.removeFromSuperview()
         
@@ -102,7 +103,7 @@ extension UIView {
     func removeLoader(_ completionHandler: (() -> ())? = nil) {
         isUserInteractionEnabled = true
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.7, animations: {
             self.loaderView?.alpha = 0
         }) { _ in
             completionHandler?()
@@ -114,7 +115,7 @@ extension UIView {
     func removeLoaderFullScreen(_ completionHandler: (() -> ())? = nil) {
         isUserInteractionEnabled = true
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.7, animations: {
             self.fullScreenLoader?.alpha = 0
         }) { _ in
             completionHandler?()

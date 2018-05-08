@@ -148,6 +148,7 @@ extension CommonViewController {
 }
 
 
+
 class CommonViewController: UIViewController, NavigationBar {
     fileprivate var isKeyboardShown = false
     fileprivate var onKeyboardShownEvent: KeyboardEvent?

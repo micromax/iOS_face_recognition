@@ -20,7 +20,7 @@ extension UIViewController {
     }
     
     
-    func customizedAlertAction(title: String?, action: (() -> Void)? = nil) -> PMAlertAction {
+   func customizedAlertAction(title: String?, action: (() -> Void)? = nil) -> PMAlertAction {
         let action = PMAlertAction(title: title, style: .default, action: action)
         action.titleLabel?.font = action.titleLabel?.font.withHeightConstant(multiplier: 0.038, view: view)
         action.setTitleColor(UIColor(red: 39, green: 128, blue: 245), for: .normal)
@@ -30,15 +30,15 @@ extension UIViewController {
     }
     
     
-    func pickImageActionSheet(action: @escaping ((UIImagePickerControllerSourceType) -> ())) {
+    func pickImageActionSheet(delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate) {
         let alert = UIAlertController(title: "Choose an image", message: "There should be faces.", preferredStyle: .actionSheet)
         
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
-            action(.camera)
+            self.chooseImageWith(source: .camera, delegate: delegate)
         }
         
         let galleryAction = UIAlertAction(title: "Gallery", style: .default) { _ in
-            action(.photoLibrary)
+            self.chooseImageWith(source: .photoLibrary, delegate: delegate)
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -50,5 +50,15 @@ extension UIViewController {
         alert.addAction(cancel)
         
         present(alert, animated: true)
+    }
+    
+    
+    func chooseImageWith(source: UIImagePickerControllerSourceType,
+                                 delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = source
+        imagePicker.delegate = delegate
+        
+        present(imagePicker, animated: true)
     }
 }
