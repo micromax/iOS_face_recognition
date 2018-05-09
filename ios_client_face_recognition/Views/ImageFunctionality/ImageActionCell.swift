@@ -70,7 +70,7 @@ class ImageActionCell: UICollectionViewCell {
     
     func onTap() {
         if let action = imageAction {
-            action.action(action.image)
+            action.action()
         }
     }
 }

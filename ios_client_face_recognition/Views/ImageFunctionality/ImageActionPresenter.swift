@@ -33,26 +33,12 @@ class ImageActionPresenter: NeuralRequests {
     }
     
     
-    func highlightFacesAfterCheck(photo: UIImage) {
-        checkCroppedFaceWithAlert(photo) { _ in
-            self.highlightFaces(photo: photo)
-        }
-    }
-    
-    
-    private func highlightFaces(photo: UIImage) {
+    func highlightFaces(photo: UIImage) {
         
     }
     
     
-    func identifyGroupAfterCheck(photo: UIImage) {
-        checkCroppedFaceWithAlert(photo) { _ in
-            self.identifyGroup(photo: photo)
-        }
-    }
-    
-    
-    private func identifyGroup(photo: UIImage) {
+    func identifyGroup(photo: UIImage) {
         
     }
 }

@@ -158,7 +158,7 @@ class EntryViewController: CommonViewController {
 extension EntryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-            return
+            fatalError()
         }
         
         dismiss(animated: true, completion: {

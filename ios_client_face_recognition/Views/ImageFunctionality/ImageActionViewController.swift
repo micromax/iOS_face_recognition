@@ -9,7 +9,7 @@ class ImageActionViewController: CommonViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar(title: username)
+        setupNavigationBar(title: "Hi, \(username ?? "user")!")
         
         bgImage(#imageLiteral(resourceName: "background"))
         setupActionData()
@@ -34,16 +34,17 @@ class ImageActionViewController: CommonViewController {
     
     private lazy var presenter = ImageActionPresenter(view: self)
     private var imageActions = [NeuralImageAction]()
+    private var currentActionExecutor: ImageAction?
     
     var username: String?
     var token: String?
     
     
     private func setupActionData() {
-        imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Authorize", action: presenter.authorizeAfterCheck))
-        imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Find faces", action: presenter.highlightFacesAfterCheck))
-        imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Identify group", action: presenter.identifyGroupAfterCheck))
-        imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Crop face", action: presenter.showCroppedFace))
+        imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Authorize", action: authorizeAction))
+        imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Find faces", action: findFacesAction))
+        imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Identify group", action: identifyGroupAction))
+        imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Crop face", action: cropFaceAction))
         imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Customize", action: nonSupportedAction))
         imageActions.append(NeuralImageAction(image: #imageLiteral(resourceName: "valakas_action_2"), name: "Update photo", action: nonSupportedAction))
     }
@@ -62,7 +63,33 @@ class ImageActionViewController: CommonViewController {
     }
     
     
-    private func nonSupportedAction(image: UIImage) {
+    private func authorizeAction() {
+        pickImageAction(presenter.authorizeAfterCheck)
+    }
+    
+    
+    private func findFacesAction() {
+        pickImageAction(presenter.highlightFaces)
+    }
+    
+    
+    private func identifyGroupAction() {
+        pickImageAction(presenter.identifyGroup)
+    }
+    
+    
+    private func cropFaceAction() {
+        pickImageAction(presenter.showCroppedFace)
+    }
+    
+    
+    private func pickImageAction(_ actionExecutor: @escaping ImageAction) {
+        pickImageActionSheet(delegate: self)
+        self.currentActionExecutor = actionExecutor
+    }
+    
+    
+    private func nonSupportedAction() {
         alert(title: "Not supported.", description: "Try using it in later releases.")
     }
 }
@@ -102,5 +129,19 @@ extension ImageActionViewController: UICollectionViewDelegate, UICollectionViewD
         }
         
         cell.onTap()
+    }
+}
+
+
+
+extension ImageActionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError()
+        }
+        
+        dismiss(animated: true) {
+            self.currentActionExecutor?(image)
+        }
     }
 }
