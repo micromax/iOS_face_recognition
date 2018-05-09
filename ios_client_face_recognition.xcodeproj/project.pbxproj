@@ -21,6 +21,8 @@
 		89E18275209B851A00A8D838 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18274209B851A00A8D838 /* UnderlinedTextField.swift */; };
 		89E18277209B856100A8D838 /* CustomizedAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18276209B856100A8D838 /* CustomizedAlertController.swift */; };
 		89E18279209B85AD00A8D838 /* ColorExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18278209B85AD00A8D838 /* ColorExtenstions.swift */; };
+		89E5B40B20A3473100591252 /* ImageActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5B40A20A3473100591252 /* ImageActionCell.swift */; };
+		89E5B40D20A34A8400591252 /* NeuralImageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5B40C20A34A8400591252 /* NeuralImageAction.swift */; };
 		89ED656120A1F66000113911 /* UINeuralNetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED656020A1F66000113911 /* UINeuralNetworkUtil.swift */; };
 		89ED656420A1F7F600113911 /* FaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED656320A1F7F600113911 /* FaceType.swift */; };
 		89ED656820A21A7C00113911 /* ImageActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED656720A21A7C00113911 /* ImageActionViewController.swift */; };
@@ -49,6 +51,8 @@
 		89E18274209B851A00A8D838 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		89E18276209B856100A8D838 /* CustomizedAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedAlertController.swift; sourceTree = "<group>"; };
 		89E18278209B85AD00A8D838 /* ColorExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtenstions.swift; sourceTree = "<group>"; };
+		89E5B40A20A3473100591252 /* ImageActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActionCell.swift; sourceTree = "<group>"; };
+		89E5B40C20A34A8400591252 /* NeuralImageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralImageAction.swift; sourceTree = "<group>"; };
 		89ED656020A1F66000113911 /* UINeuralNetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINeuralNetworkUtil.swift; sourceTree = "<group>"; };
 		89ED656320A1F7F600113911 /* FaceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceType.swift; sourceTree = "<group>"; };
 		89ED656720A21A7C00113911 /* ImageActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActionViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				89ED656320A1F7F600113911 /* FaceType.swift */,
+				89E5B40C20A34A8400591252 /* NeuralImageAction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			children = (
 				89ED656720A21A7C00113911 /* ImageActionViewController.swift */,
 				89ED656920A21BDF00113911 /* ImageActionPresenter.swift */,
+				89E5B40A20A3473100591252 /* ImageActionCell.swift */,
 			);
 			path = ImageFunctionality;
 			sourceTree = "<group>";
@@ -318,10 +324,12 @@
 				89418E99209B816B00A2B56C /* AppDelegate.swift in Sources */,
 				89ED656820A21A7C00113911 /* ImageActionViewController.swift in Sources */,
 				89ED656420A1F7F600113911 /* FaceType.swift in Sources */,
+				89E5B40D20A34A8400591252 /* NeuralImageAction.swift in Sources */,
 				89E18271209B847700A8D838 /* ProgressLoader.swift in Sources */,
 				8971DF3720A0BD9F009A87CA /* EntryViewPresenter.swift in Sources */,
 				89E18273209B84B600A8D838 /* UIExtenstions.swift in Sources */,
 				89ED656120A1F66000113911 /* UINeuralNetworkUtil.swift in Sources */,
+				89E5B40B20A3473100591252 /* ImageActionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

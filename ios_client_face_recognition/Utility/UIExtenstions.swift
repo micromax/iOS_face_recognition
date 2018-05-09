@@ -34,6 +34,13 @@ extension UITextField {
 }
 
 
+extension UILabel {
+    func scaleFont(scale: CGFloat = 0.035, view: UIView) {
+        font = font?.withSize(scale * view.frame.height)
+    }
+}
+
+
 extension UIFont{
     func withHeightConstant(multiplier: CGFloat, view: UIView) -> UIFont {
         return self.withSize(view.frame.height * multiplier)
