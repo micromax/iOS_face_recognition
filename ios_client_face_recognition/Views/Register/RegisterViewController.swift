@@ -22,9 +22,6 @@ class RegisterViewController: CommonViewController {
     }
     
     
-    private lazy var presenter = RegisterViewPresenter(view: self)
-    
-    
     private let frontImage: UIImageView = {
         let faceImage = UIImageView()
         faceImage.image = #imageLiteral(resourceName: "valakas_action_1")
@@ -88,57 +85,21 @@ class RegisterViewController: CommonViewController {
         let button = UIButton()
         button.defaultInit(title: "Register")
         button.isEnabled = false
+        button.alpha = 0.5
         
         return button
     }()
     
     
-    private let leftFaceType: UIView = {
-        let view = UILabel()
-        view.text = "left"
-        view.textAlignment = .center
-        view.textColor = UIColor(red: 240, green: 248, blue: 255)
-        
-        view.backgroundColor = UIColor(red: 220, green: 20, blue: 60)
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
+    private var leftFaceTypeView: UIView!
+    private var centerFaceTypeView: UIView!
+    private var rightFaceTypeView: UIView!
     
     
-    private let centerFaceType: UIView = {
-        let view = UILabel()
-        view.text = "center"
-        view.textAlignment = .center
-        view.textColor = UIColor(red: 240, green: 248, blue: 255)
-        
-        view.backgroundColor = UIColor(red: 220, green: 20, blue: 60)
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
-    
-    
-    private let rightFaceType: UIView = {
-        let view = UILabel()
-        view.text = "right"
-        view.textAlignment = .center
-        view.textColor = UIColor(red: 240, green: 248, blue: 255)
-        
-        view.backgroundColor = UIColor(red: 220, green: 20, blue: 60)
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
-    
-    var faces = [UIImage]()
+    private lazy var presenter = RegisterViewPresenter(view: self)
+    private var faces = [UIImage]()
     private var currentFaceIndex = 0
+    
     
     private func setupViews() {
         for _ in 0..<6 {
@@ -157,9 +118,13 @@ class RegisterViewController: CommonViewController {
         view.addSubview(inputImageButton)
         view.addSubview(registerButton)
         view.addSubview(faceCollection)
-        view.addSubview(leftFaceType)
-        view.addSubview(centerFaceType)
-        view.addSubview(rightFaceType)
+        
+        leftFaceTypeView = spawnFaceTypeLabel(text: "left")
+        rightFaceTypeView = spawnFaceTypeLabel(text: "right")
+        centerFaceTypeView = spawnFaceTypeLabel(text: "center")
+        view.addSubview(leftFaceTypeView)
+        view.addSubview(centerFaceTypeView)
+        view.addSubview(rightFaceTypeView)
         
         frontImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         frontImage.widthAnchor.constraint(equalToConstant: view.frame.width * 0.3).isActive = true
@@ -182,20 +147,20 @@ class RegisterViewController: CommonViewController {
         faceCollection.delegate = self
         faceCollection.dataSource = self
         
-        leftFaceType.topAnchor.constraint(equalTo: faceCollection.bottomAnchor, constant: 10).isActive = true
-        leftFaceType.leadingAnchor.constraint(equalTo: faceCollection.leadingAnchor).isActive = true
-        leftFaceType.widthAnchor.constraint(equalTo: faceCollection.widthAnchor, multiplier: 0.33).isActive = true
-        leftFaceType.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.035).isActive = true
+        leftFaceTypeView.topAnchor.constraint(equalTo: faceCollection.bottomAnchor, constant: 10).isActive = true
+        leftFaceTypeView.leadingAnchor.constraint(equalTo: faceCollection.leadingAnchor).isActive = true
+        leftFaceTypeView.widthAnchor.constraint(equalTo: faceCollection.widthAnchor, multiplier: 0.33).isActive = true
+        leftFaceTypeView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.035).isActive = true
         
-        centerFaceType.topAnchor.constraint(equalTo: faceCollection.bottomAnchor, constant: 10).isActive = true
-        centerFaceType.leadingAnchor.constraint(equalTo: leftFaceType.trailingAnchor).isActive = true
-        centerFaceType.widthAnchor.constraint(equalTo: leftFaceType.widthAnchor).isActive = true
-        centerFaceType.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.035).isActive = true
+        centerFaceTypeView.topAnchor.constraint(equalTo: faceCollection.bottomAnchor, constant: 10).isActive = true
+        centerFaceTypeView.leadingAnchor.constraint(equalTo: leftFaceTypeView.trailingAnchor).isActive = true
+        centerFaceTypeView.widthAnchor.constraint(equalTo: leftFaceTypeView.widthAnchor).isActive = true
+        centerFaceTypeView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.035).isActive = true
         
-        rightFaceType.topAnchor.constraint(equalTo: faceCollection.bottomAnchor, constant: 10).isActive = true
-        rightFaceType.leadingAnchor.constraint(equalTo: centerFaceType.trailingAnchor).isActive = true
-        rightFaceType.widthAnchor.constraint(equalTo: leftFaceType.widthAnchor).isActive = true
-        rightFaceType.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.035).isActive = true
+        rightFaceTypeView.topAnchor.constraint(equalTo: faceCollection.bottomAnchor, constant: 10).isActive = true
+        rightFaceTypeView.leadingAnchor.constraint(equalTo: centerFaceTypeView.trailingAnchor).isActive = true
+        rightFaceTypeView.widthAnchor.constraint(equalTo: leftFaceTypeView.widthAnchor).isActive = true
+        rightFaceTypeView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.035).isActive = true
         
         inputImageButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: offset).isActive = true
         inputImageButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -offset).isActive = true
@@ -208,6 +173,21 @@ class RegisterViewController: CommonViewController {
         registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.frame.height * 0.05).isActive = true
         registerButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.075).isActive = true
         registerButton.addTarget(self, action: #selector(onRegisterClick), for: .touchUpInside)
+    }
+    
+    
+    private func spawnFaceTypeLabel(text: String) -> UIView {
+        let view = UILabel()
+        view.text = text
+        view.textAlignment = .center
+        view.textColor = UIColor(red: 240, green: 248, blue: 255)
+        
+        view.backgroundColor = UIColor(red: 220, green: 20, blue: 60)
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.black.cgColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
     }
     
     
