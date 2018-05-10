@@ -9,7 +9,7 @@ typealias FaceAction = (UIImage, FaceType) -> ()
 
 protocol NeuralRequests {
     var controller: CommonViewController {get}
-    var neuralApi: MoyaProvider<FaceRecognitionService> {get}
+    var neuralApi: MoyaProvider<FaceRecognitionService> {get set}
     func actionAsyncAfterLoaderClosed(action: @escaping () -> ())
     func alertAsync(title: String, description: String)
 }
@@ -55,37 +55,19 @@ extension NeuralRequests {
     //normal function output, so you'll have to close it manually
     //after all work is done using actions as params
     func cropFace(_ photo: UIImage, onImageDownloaded: @escaping FaceAction) {
-        neuralApi.request(.nonTokenCropFace(image: photo)) { result in
-            switch result {
-            case let .success(response):
-                guard let jsonMap = try? response.mapJSON(),
-                    let json = jsonMap as? [String: Any] else {
-                        self.alertAsync(title: "Error", description: "Couldn't send query.")
-                        return
-                }
-                
-                if self.success(json) {
-                    guard let data = json["data"] as? [String: Any],
-                        let faceTypeRaw = data["face_type"] as? String,
-                        let imageUrl = data["image_url"] as? String else {
-                            fatalError()
-                    }
-                    
-                    let faceType = FaceType.init(rawValue: faceTypeRaw) ?? FaceType.center
-                    
-                    self.downloadImageFromUrl(url: imageUrl, action: { face in
-                        onImageDownloaded(face, faceType)
-                    }) {
-                        self.alertAsync(title: "Error", description: "Couldn't download image")
-                    }
-                } else {
-                    let message = json["message"] as? String ?? "Unexpected error"
-                    self.alertAsync(title: "Error", description: message)
-                }
-        
-            case let .failure(error):
-                self.alertAsync(title: "Error", description: "Couldn't send request to server")
-                print(error)
+        requestTemplate(request: .nonTokenCropFace(image: photo)) { json in
+            guard let data = json["data"] as? [String: Any],
+                let faceTypeRaw = data["face_type"] as? String,
+                let imageUrl = data["image_url"] as? String else {
+                    fatalError()
+            }
+            
+            let faceType = FaceType.init(rawValue: faceTypeRaw) ?? FaceType.center
+            
+            self.downloadImageFromUrl(url: imageUrl, action: { face in
+                onImageDownloaded(face, faceType)
+            }) {
+                self.alertAsync(title: "Error", description: "Couldn't download image")
             }
         }
     }
@@ -102,6 +84,42 @@ extension NeuralRequests {
                 action(image)
             } else {
                 error()
+            }
+        }
+    }
+    
+    
+    func requestTemplate(request: FaceRecognitionService,
+                         onError: (([String: Any]) -> ())? = nil,
+                         onFailure: (() -> ())? = nil,
+                         _ onSuccess: @escaping ([String: Any]) -> ()) {
+        neuralApi.request(request) { result in
+            switch result {
+            case let .success(response):
+                guard let jsonMap = try? response.mapJSON(),
+                    let json = jsonMap as? [String: Any] else {
+                        self.alertAsync(title: "Error", description: "Couldn't parse data from response")
+                        return
+                }
+                
+                if self.success(json) {
+                    onSuccess(json)
+                } else {
+                    if let error = onError {
+                        error(json)
+                    } else {
+                        let message = json["message"] as? String ?? "Unexpected error"
+                        self.alertAsync(title: "Error", description: message)
+                    }
+                }
+                
+            case let .failure(error):
+                if let failure = onFailure {
+                    self.actionAsyncAfterLoaderClosed(action: failure)
+                } else {
+                    self.alertAsync(title: "Error", description: "Couldn't get response from the server")
+                    print(error)
+                }
             }
         }
     }

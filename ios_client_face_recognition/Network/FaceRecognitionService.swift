@@ -16,7 +16,7 @@ enum FaceRecognitionService {
 }
 
 
-extension FaceRecognitionService: TargetType {
+extension FaceRecognitionService: TargetType, AccessTokenAuthorizable {
     var baseURL: URL {
         return URL(string: "http://vitalyainvoker.tk/users/api")!
     }
@@ -90,6 +90,16 @@ extension FaceRecognitionService: TargetType {
     
     var headers: [String : String]? {
         return nil
+    }
+    
+    
+    var authorizationType: AuthorizationType {
+        switch self {
+        case .login(_,_), .register(_,_,_), .loginPhoto(_), .nonTokenCropFace(_):
+            return .none
+        default:
+            return .bearer
+        }
     }
     
     

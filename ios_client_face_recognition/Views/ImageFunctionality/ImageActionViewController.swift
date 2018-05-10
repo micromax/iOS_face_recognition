@@ -37,7 +37,21 @@ class ImageActionViewController: CommonViewController {
     private var currentActionExecutor: ImageAction?
     
     var username: String?
-    var token: String?
+    var token: String? {
+        didSet {
+            if let tokenNonNull = token {
+                presenter.signWithBearerToken(token: tokenNonNull)
+            }
+        }
+    }
+    
+
+    func showImageFullScreen(_ image: UIImage, title: String = "") {
+        let imageVC = ImageFullScreenViewController()
+        imageVC.data = (image, title)
+        
+        navigationController?.pushViewController(imageVC, animated: true)
+    }
     
     
     private func setupActionData() {
