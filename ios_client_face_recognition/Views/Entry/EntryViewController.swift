@@ -63,11 +63,11 @@ class EntryViewController: CommonViewController {
         let alert = customizedAlertController(title: "Input data", description: "Username and password");
         
         alert.addTextField({textField in
-            textField?.defaultInitilization(hint: "Username")
+            textField?.defaultInitilization(hint: "Username", bgColor: UIColor(red: 240, green: 248, blue: 255))
             textField?.scaleFont(view: self.view)
         })
         alert.addTextField({textField in
-            textField?.defaultInitilization(hint: "Password")
+            textField?.defaultInitilization(hint: "Password", bgColor: UIColor(red: 240, green: 248, blue: 255))
             textField?.scaleFont(view: self.view)
         })
         

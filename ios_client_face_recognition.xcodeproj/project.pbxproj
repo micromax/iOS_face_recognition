@@ -16,6 +16,7 @@
 		8991EE7520A0D07800E3EBB9 /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */; };
 		8991EE7720A0D53200E3EBB9 /* FaceRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991EE7620A0D53200E3EBB9 /* FaceRecognitionService.swift */; };
 		89A04B9920A4B7700060C579 /* ImageFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A04B9820A4B7700060C579 /* ImageFullScreenViewController.swift */; };
+		89A04B9B20A4D39B0060C579 /* FaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A04B9A20A4D39B0060C579 /* FaceCell.swift */; };
 		89E1826F209B843600A8D838 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1826E209B843600A8D838 /* CommonViewController.swift */; };
 		89E18271209B847700A8D838 /* ProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18270209B847700A8D838 /* ProgressLoader.swift */; };
 		89E18273209B84B600A8D838 /* UIExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E18272209B84B600A8D838 /* UIExtenstions.swift */; };
@@ -47,6 +48,7 @@
 		8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
 		8991EE7620A0D53200E3EBB9 /* FaceRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognitionService.swift; sourceTree = "<group>"; };
 		89A04B9820A4B7700060C579 /* ImageFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFullScreenViewController.swift; sourceTree = "<group>"; };
+		89A04B9A20A4D39B0060C579 /* FaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCell.swift; sourceTree = "<group>"; };
 		89E1826E209B843600A8D838 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		89E18270209B847700A8D838 /* ProgressLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLoader.swift; sourceTree = "<group>"; };
 		89E18272209B84B600A8D838 /* UIExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtenstions.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				8991EE7220A0CF4200E3EBB9 /* RegisterViewController.swift */,
 				8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */,
+				89A04B9A20A4D39B0060C579 /* FaceCell.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				8991EE7720A0D53200E3EBB9 /* FaceRecognitionService.swift in Sources */,
 				89E18275209B851A00A8D838 /* UnderlinedTextField.swift in Sources */,
 				89418E9B209B816B00A2B56C /* EntryViewController.swift in Sources */,
+				89A04B9B20A4D39B0060C579 /* FaceCell.swift in Sources */,
 				89E18279209B85AD00A8D838 /* ColorExtenstions.swift in Sources */,
 				89418E99209B816B00A2B56C /* AppDelegate.swift in Sources */,
 				89A04B9920A4B7700060C579 /* ImageFullScreenViewController.swift in Sources */,

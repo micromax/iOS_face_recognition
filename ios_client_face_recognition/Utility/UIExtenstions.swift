@@ -24,7 +24,7 @@ extension UITextField {
         
         self.attributedPlaceholder = placeholder
         self.textAlignment = .center
-        self.backgroundColor = UIColor(red: 240, green: 248, blue: 255)
+        self.backgroundColor = bgColor
     }
     
     
