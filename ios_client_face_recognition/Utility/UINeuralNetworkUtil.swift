@@ -29,6 +29,22 @@ extension UINeuralNetworkUtil where Self: CommonViewController {
         
         present(alert, animated: true)
     }
+    
+    
+    func alertWithFace(faceType: FaceType, face: UIImage, yesAction: @escaping (UIImage, FaceType) -> ()) {
+        let alert = customizedAlertController(title: "Found face", description:
+            "Face type = \(faceType.rawValue). Is this your face?", image: face)
+        
+        let yes = customizedAlertAction(title: "Yes" ) {
+            yesAction(face, faceType)
+        }
+        let no = customizedAlertAction(title: "No")
+        
+        alert.addAction(yes)
+        alert.addAction(no)
+        
+        present(alert, animated: true)
+    }
 }
 
 extension CommonViewController: UINeuralNetworkUtil {}

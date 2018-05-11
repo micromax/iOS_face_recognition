@@ -114,4 +114,11 @@ extension UIView {
             self.alpha = toAlpha
         }
     }
+    
+    
+    func fadeColor(_ color: UIColor, duration: Double = 1) {
+        UIView.animate(withDuration: duration) {
+            self.backgroundColor = color
+        }
+    }
 }

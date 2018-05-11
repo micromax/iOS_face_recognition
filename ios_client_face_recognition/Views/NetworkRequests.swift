@@ -48,6 +48,17 @@ extension NeuralRequests {
             }
         }
     }
+
+    
+    func checkCroppedFaceWithAlert(_ photo: UIImage, validFaceAction: @escaping FaceAction) {
+        controller.view.showLoaderFullScreen()
+        
+        cropFace(photo) { face, faceType in
+            self.actionAsyncAfterLoaderClosed {
+                self.controller.alertWithFace(faceType: faceType, face: face, yesAction: validFaceAction)
+            }
+        }
+    }
     
 
     //get cropped face url from server API, download it

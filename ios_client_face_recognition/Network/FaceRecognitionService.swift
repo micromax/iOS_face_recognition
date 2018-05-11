@@ -109,7 +109,7 @@ extension FaceRecognitionService: TargetType, AccessTokenAuthorizable {
         }
         
         let imageMultipart = MultipartFormData(provider: MultipartFormData.FormDataProvider.data(imageData),
-                                               name: name, fileName: "image.png", mimeType: "image/png")
+                                               name: name, fileName: "\(name).png", mimeType: "image/png")
         
         return imageMultipart
     }

@@ -19,7 +19,7 @@ class RegisterViewController: CommonViewController {
         registerDismissingKeyboardOnTap()
         setupNavigationBar(title: "Registration")
         bgImage(#imageLiteral(resourceName: "background"))
-        setupViews()
+        setupViews()        
     }
     
     
@@ -33,7 +33,7 @@ class RegisterViewController: CommonViewController {
     }()
     
     
-    private let usernameTextField: UnderlinedTextField = {
+    let usernameTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField(xOffset: 0, yOffset: 5)
         textField.defaultInitilization(hint: "Username")
         
@@ -41,9 +41,10 @@ class RegisterViewController: CommonViewController {
     }()
     
     
-    private let passwordTextField: UnderlinedTextField = {
+    let passwordTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField(xOffset: 0, yOffset: 5)
         textField.defaultInitilization(hint: "Password")
+        textField.isSecureTextEntry = true
         
         return textField
     }()
@@ -54,16 +55,6 @@ class RegisterViewController: CommonViewController {
         button.defaultInit(title: "Add image")
         
         return button
-    }()
-    
-    
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontSizeToFitWidth = true
-        label.text = "You have to provide at least one image for each face type:"
-        
-        return label
     }()
     
     
@@ -82,7 +73,7 @@ class RegisterViewController: CommonViewController {
     }()
     
     
-    private let registerButton: UIButton = {
+    let registerButton: UIButton = {
         let button = UIButton()
         button.defaultInit(title: "Register")
         button.isEnabled = false
@@ -92,14 +83,16 @@ class RegisterViewController: CommonViewController {
     }()
     
     
-    private var leftFaceTypeView: UIView!
-    private var centerFaceTypeView: UIView!
-    private var rightFaceTypeView: UIView!
+    var leftFaceTypeView: UILabel!
+    var centerFaceTypeView: UILabel!
+    var rightFaceTypeView: UILabel!
     
     
     private lazy var presenter = RegisterViewPresenter(view: self)
     private var faces = [UIImage]()
     private var currentFaceIndex = 0
+    
+    var fullImages = [UIImage]()
     
     
     private func setupViews() {
@@ -109,7 +102,6 @@ class RegisterViewController: CommonViewController {
         
         usernameTextField.scaleFont(scale: 0.04, view: view)
         passwordTextField.scaleFont(scale: 0.04, view: view)
-        descriptionLabel.scaleFont(scale: 0.04, view: view)
         inputImageButton.scaleFont(view: view)
         registerButton.scaleFont(view: view)
         
@@ -177,7 +169,7 @@ class RegisterViewController: CommonViewController {
     }
     
     
-    private func spawnFaceTypeLabel(text: String) -> UIView {
+    private func spawnFaceTypeLabel(text: String) -> UILabel {
         let view = UILabel()
         view.text = text
         view.textAlignment = .center
@@ -193,15 +185,32 @@ class RegisterViewController: CommonViewController {
     
     
     @objc private func onAddImageClick() {
-        faces[currentFaceIndex] = #imageLiteral(resourceName: "placeholder_image")
+        pickImageActionSheet(delegate: self)
+    }
+    
+    
+    func addFace(_ face: UIImage) {
+        faces[currentFaceIndex] = face
         
         faceCollection.reloadItems(at: [IndexPath(row: currentFaceIndex, section: 0)])
         currentFaceIndex += 1
     }
     
     
-    @objc private func onRegisterClick() {
+    func onSuccessfullRegister() {
+        let controller = customizedAlertController(title: "Success", description: "You have been registered")
+        let action = customizedAlertAction(title: "OK") {
+            self.navigationController?.popViewController(animated: true)
+        }
         
+        controller.addAction(action)
+        
+        present(controller, animated: true)
+    }
+    
+    
+    @objc private func onRegisterClick() {
+        presenter.register()
     }
     
     
@@ -264,5 +273,17 @@ extension RegisterViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
     }
-    
+}
+
+
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError()
+        }
+        
+        dismiss(animated: true) {
+            self.presenter.checkCroppedFace(image)
+        }
+    }
 }
