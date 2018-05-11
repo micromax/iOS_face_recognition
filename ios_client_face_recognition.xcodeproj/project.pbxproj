@@ -15,6 +15,7 @@
 		8991EE7320A0CF4200E3EBB9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991EE7220A0CF4200E3EBB9 /* RegisterViewController.swift */; };
 		8991EE7520A0D07800E3EBB9 /* RegisterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */; };
 		8991EE7720A0D53200E3EBB9 /* FaceRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8991EE7620A0D53200E3EBB9 /* FaceRecognitionService.swift */; };
+		899615F420A5ED64003902E9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 899615CF20A5E427003902E9 /* Model.xcdatamodeld */; };
 		89A04B9920A4B7700060C579 /* ImageFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A04B9820A4B7700060C579 /* ImageFullScreenViewController.swift */; };
 		89A04B9B20A4D39B0060C579 /* FaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A04B9A20A4D39B0060C579 /* FaceCell.swift */; };
 		89E1826F209B843600A8D838 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1826E209B843600A8D838 /* CommonViewController.swift */; };
@@ -47,6 +48,7 @@
 		8991EE7220A0CF4200E3EBB9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8991EE7420A0D07800E3EBB9 /* RegisterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewPresenter.swift; sourceTree = "<group>"; };
 		8991EE7620A0D53200E3EBB9 /* FaceRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognitionService.swift; sourceTree = "<group>"; };
+		899615D020A5E427003902E9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		89A04B9820A4B7700060C579 /* ImageFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFullScreenViewController.swift; sourceTree = "<group>"; };
 		89A04B9A20A4D39B0060C579 /* FaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCell.swift; sourceTree = "<group>"; };
 		89E1826E209B843600A8D838 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				89418E9F209B816C00A2B56C /* Assets.xcassets */,
 				89418EA1209B816C00A2B56C /* LaunchScreen.storyboard */,
 				89418EA4209B816C00A2B56C /* Info.plist */,
+				899615CF20A5E427003902E9 /* Model.xcdatamodeld */,
 			);
 			path = ios_client_face_recognition;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				8991EE7720A0D53200E3EBB9 /* FaceRecognitionService.swift in Sources */,
 				89E18275209B851A00A8D838 /* UnderlinedTextField.swift in Sources */,
 				89418E9B209B816B00A2B56C /* EntryViewController.swift in Sources */,
+				899615F420A5ED64003902E9 /* Model.xcdatamodeld in Sources */,
 				89A04B9B20A4D39B0060C579 /* FaceCell.swift in Sources */,
 				89E18279209B85AD00A8D838 /* ColorExtenstions.swift in Sources */,
 				89418E99209B816B00A2B56C /* AppDelegate.swift in Sources */,
@@ -529,6 +533,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		899615CF20A5E427003902E9 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				899615D020A5E427003902E9 /* Model.xcdatamodel */,
+			);
+			currentVersion = 899615D020A5E427003902E9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 89418E8D209B816B00A2B56C /* Project object */;
 }

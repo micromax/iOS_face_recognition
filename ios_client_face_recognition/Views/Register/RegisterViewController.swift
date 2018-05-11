@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class RegisterViewController: CommonViewController {
     override func viewWillAppear(_ animated: Bool) {
@@ -201,6 +202,44 @@ class RegisterViewController: CommonViewController {
     
     @objc private func onRegisterClick() {
         
+    }
+    
+    
+    @available(iOS 10.0, *)
+    private func saveToLocalDB() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "ImageActionData", in: context)!
+        let person = NSManagedObject(entity: entity, insertInto: context)
+        
+        person.setValue(usernameTextField.text!, forKey: "name")
+        
+        guard let imageData = UIImagePNGRepresentation(faces[0]) else { return }
+        person.setValue(imageData, forKey: "image")
+        
+        do {
+            try context.save()
+            print("Saved")
+        } catch let error {
+            print("not saved \(error)")
+        }
+    }
+    
+    @available(iOS 10.0, *)
+    private func getPersonFromDB() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let fetch = NSFetchRequest<NSManagedObject>(entityName: "ImageActionData")
+        
+        do {
+            let arr = try context.fetch(fetch)
+            print(arr.count)
+        } catch let error {
+            print(error)
+        }
     }
 }
 
